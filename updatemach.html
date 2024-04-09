@@ -759,6 +759,37 @@ function searchLeagues() {
 
 
 
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warning Page</title>
+</head>
+<body>
+
+<!-- Your content goes here -->
+
+<script>
+window.addEventListener('beforeunload', function(e) {
+    // Cancel the event
+    e.preventDefault();
+    // Chrome requires returnValue to be set
+    e.returnValue = '';
+
+    // Customize the warning message
+    var message = 'Are you sure you want to leave this page?';
+
+    // Display the warning
+    return message;
+});
+</script>
+
+</body>
+</html>
+
+
+
 
 
 
