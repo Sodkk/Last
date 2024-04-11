@@ -1,397 +1,83 @@
- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>beIN SPORTS Channel List</title>
   <style>
-
-    body {
-      background-color: #1c084b;
+    .channel-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px;
+      position: center;
     }
-      
-      
-      
-      ::-webkit-scrollbar-thumb{background:#002e70}
-      
-      ::-webkit-scrollbar{width:5px;height:9px;background:#dcdcdc}
-      
-      body{margin:0}
-      
-      td,th{padding:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-      
-      *:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-      
-      .container{margin-left:auto;margin-right:auto;padding-right:15px;padding-left:15px}
-      
-      @media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}
-      
-      @media (min-width:1200px){.container{width:1170px}}
-      
-      .container-fluid{margin-left:auto;margin-right:auto;padding-right:15px;padding-left:15px}
-      
-      .container:before,.container:after,.container-fluid:before,.container-fluid:after{content:" ";display:table}
-      
-      .container:after,.container-fluid:after,{clear:both}
-      
-      /*mnajiri*/
-      
-      .contents.widget-content {padding: 5px !important;}
-      
-      /*mnajiri*/
-      
-      .contents.widget-content{padding:15px}
-      
-      div#match_today h2{text-align:center;padding:10px;background:#532855;color:#fff}
-      
-      /*mnajiri*/
-      
-      .mnajiri{display:block;height:94px;position:relative;
-      
-      box-shadow:rgba(0, 0, 0, 0.57) 0px 25px 20px -21px;
-      
-      -webkit-transition:box-shadow .3s;transition:box-shadow .3s;
-      
-      border-radius:5px;margin:12px auto;
-      
-      background:#a31b09a6;}
-      
-      /*mnajiri*/
-      
-      .fullink{display:block;height:100%;position:absolute;right:0;width:100%;z-index:5}
-      
-      /*mnajiri*/
-      
-      .mnajiriin{margin:0 13px}
-      
-      /*mnajiri*/
-      
-      .mnajiri img{background-color:#fff;border-bottom:3px solid #532855;height:50px;padding:4px;position:absolute;width:50px;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,0.1),0 2px 5px -1px rgba(0,0,0,0.2);-webkit-transition:box-shadow .3s;transition:box-shadow .3s}
-      
-      /*mnajiri*/
-      
-      .mpart1 strong{
-      
-          color: #fff;
-      
-          height: 50px;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          
-          font-weight: bold;
-          margin-right: -50px;
-      
-          position: absolute;
-      
-          right: 50%;
-      
-          text-align: center;
-      
-          width: 100px;
-      
-          z-index: 1;
-      
-          border-radius: 5px;}
-      
-      .mpart1{position:relative;height:48px;line-height:48px}
-      
-      .mpart1 span{
-      
-          float: right;
-      
-          text-align: center;
-      
-          width: 100%;
-      
-          z-index: 2;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          
-          font-weight: bold;
-      
-      }
-      
-      /*mnajiri*/
-      
-      .right_match{float:right;padding-left:30px;width:50%;position:relative;z-index:2}
-      
-      /*mnajiri*/
-      
-      .left_match{float:left;padding-right:30px;width:50%;position:relative;z-index:2}
-      
-      .details_match{padding:0 100px;font-size:14px}
-      
-      .details_match i{margin-left:5px}
-      
-      .details_match span{background-color:#532855;border-left:1px solid #fff;color:#fff;float:right;height:36px;line-height:36px;position:relative;text-align:center;width:33.3%}
-      
-      .details_match .liga_mdw{border:0 none}
-      
-      .first_match::before,.liga_mdw::before{background-color:#532855;content:"";height:36px;position:absolute;top:0;width:20px}
-      
-      .first_match::before{transform:skew(-20deg);right:-12px;border-radius:0 0 8px}
-      
-      .liga_mdw::before{transform:skew(20deg);left:-12px;border-radius:0 0 0 8px}
-      
-      @media screen and (max-width:700px){.liga_mdw{display:none}.details_match{padding:0 60px}.details_match span{width:50%}.thany::before{background-color:#532855;content:"";height:36px;position:absolute;top:0;width:20px;transform:skew(20deg);left:-12px;border-radius:0 0 0 8px}}
-      
-      @media screen and (max-width:500px){.gadwal{font-size:14px;width:106%;background:#fff} }
-      
-      .details_match{font-size:12px}
-      
-      /*mnajiri*/
-      
-      .mpart1{line-height:30px}
-      
-      /*mnajiri*/
-      
-      .mnajiriin{margin:0 5px}
-      
-      /*mnajiri*/
-      
-      .right_match{padding-left:20px}
-      
-      .left_match{padding-right:20px}
-      
-      /*mnajiri*/
-      
-      .mnajiri{height:157px}
-      
-      .details_match{padding:0 25px}
-      
-      /*mnajiri*/
-      
-      .mnajiri img{position:relative;display:block;margin:5px auto;background:transparent;border:0;padding:0}
-      
-      .mpart1 strong{height:36px;line-height:36px;top:30px;width:60px;margin-right:-30px}
-      
-      .najiri1{
-      
-          background-color: #c02525;
-      
-      }
-      
-      .najiri2{
-      
-          background-color: #f31404;
-      
-      }
-      
-      .najiri3{
-      
-          background-color: #4caf50;
-      
-      }
-    
-    .fname {
-        
-        color: #f7f7f7;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: medium;
-        
-        font-weight: bold;
-    
+
+    .channel {
+       /* Increased border height */
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative; /* Added position relative */
+      position: center;
     }
-        
-        </style>
- 
 
-<script>
-  function refreshPage() {
-    location.reload();
-}
+    .hd-icon {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      padding: 3px 7px;
+      border-radius: 10%;
+      z-index: 1; /* Ensures the icon is above the image */
+    }
 
-// Set interval to call the refreshPage function every 10 seconds (10000 milliseconds)
-setInterval(refreshPage, 10000);
-</script>
- 
- 
- 
- 
- 
- 
- <!DOCTYPE html>
- <html>
- <head>
-  <title>Table Football matches</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="10">
- </head>
- <body>
-  <div class="match_today container" id="match_today">
-    
-
-<!--match mdw1-->
-  <div class="mnajiri">
-     <a class="fullink" href="https://mhdplay.com/tv/bein-sports-1/"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="https://cdn.resfu.com/img_data/equipos/3845.png?size=120x&lossy=1&ext=jpeg">
-                  <div class="fname">Liverpool</div>
-               </span>
-           </div>
-                 <strong class="najiri1">22:00</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="https://cdn.resfu.com/img_data/equipos/339.png?size=120x&lossy=1&ext=jpeg">
-                       <div class="fname">Atalanta</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> Europa League</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> maxamed barakat</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
-
-<!--match mdw2-->
-  <div class="mnajiri">
-     <a class="fullink" href="https://mhdplay.com/tv/bein-sports-3/"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="https://cdn.resfu.com/img_data/equipos/1692.png?size=120x&lossy=1&ext=jpeg">
-                  <div class="fname">Milan</div>
-               </span>
-           </div>
-                 <strong class="najiri1">22:00</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="https://cdn.resfu.com/img_data/equipos/2176.png?size=120x&lossy=1&ext=jpeg">
-                       <div class="fname">Roma</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> Europa League</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b>xafiid daraji</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
-
-<!--match mdw3-->
-  <div class="mnajiri">
-     <a class="fullink" href="https://mhdplay.com/tv/bein-sports-4/"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="https://cdn.resfu.com/img_data/equipos/3668.png?size=120x&lossy=1&ext=jpeg">
-                  <div class="fname">Leverkusen</div>
-               </span>
-           </div>
-                 <strong class="najiri1">22:00</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="https://cdn.resfu.com/img_data/equipos/2804.png?size=120x&lossy=1&ext=jpeg">
-                       <div class="fname">Westham</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> Europa League</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> maxamed barakat</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
-
-<!--match mdw4-->
-  <div class="mnajiri">
-     <a class="fullink" href="https://mhdplay.com/tv/bein-sports-4/"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="https://cdn.resfu.com/img_data/equipos/466.png?size=120x&lossy=1&ext=jpeg">
-                  <div class="fname">Benfica</div>
-               </span>
-           </div>
-                 <strong class="najiri1">22:00</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="https://cdn.resfu.com/img_data/equipos/5117.png?size=120x&lossy=1&ext=jpeg">
-                       <div class="fname">Olympique</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> Europa League</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> nuwafi bashi</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
-
-<!--match mdw1-->
-  <div class="mnajiri">
-     <a class="fullink" href="https://mhdplay.com/tv/bein-sports-4/"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="https://cdn.resfu.com/img_data/equipos/297.png?size=120x&lossy=1&ext=jpeg">
-                  <div class="fname">Aston Villa</div>
-               </span>
-           </div>
-                 <strong class="najiri1">22:00</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="https://cdn.resfu.com/img_data/equipos/1866.png?size=120x&lossy=1&ext=jpeg">
-                       <div class="fname">Olympique Lyonnais</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> Europa League</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> xasan cyduri</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
-
-
-
-
-
- 
- 
- 
- 
- 
-      </div>
-  </div>
-  <br>
- </body>
- </html>
- 
- <style>
+    .channel img {
+      max-width: 100%;
+      height: 120px;
+      border-radius: 7px; /* Adjusted border radius for images */
+    }
   </style>
- 
+</head>
+<body>
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-1/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein1-1.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-2/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein2-1.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-3/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein3.webp" alt="Channel 3"></a>
+  </div>
   
+</div>
+
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-4/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein4-1.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-5/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein5-1.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">HD</span>
+    <a href="https://mhdplay.com/tv/bein-sports-6/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/bein6-1.webp" alt="Channel 3"></a>
+  </div>
   
+</div>
+
+
+
+
   
- 
 
 
 
@@ -403,7 +89,116 @@ setInterval(refreshPage, 10000);
 
 
 
- <!DOCTYPE html>
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-main-event/"><img src="https://mhdplay.com/wp-content/uploads/2023/09/skyevent.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/tnt-sports-1-uk/"><img src="https://mhdplay.com/wp-content/uploads/2023/07/tnt1.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/tnt-sports-2-uk/"><img src="https://mhdplay.com/wp-content/uploads/2023/07/tntt2.webp" alt="Channel 3"></a>
+  </div>
+  
+</div>
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/tnt-sports-3-uk/"><img src="https://mhdplay.com/wp-content/uploads/2023/07/tnt3.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/tnt-sports-4-uk/"><img src="https://mhdplay.com/wp-content/uploads/2023/07/tntt4.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/tnt-sports-5/"><img src="https://mhdplay.com/wp-content/uploads/2024/02/tnt5.webp" alt="Channel 3"></a>
+  </div>
+  
+</div>
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-f1/"><img src="https://mhdplay.com/wp-content/uploads/2023/04/skyf1.png" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-premier-league/"><img src="https://mhdplay.com/wp-content/uploads/2023/04/skyspp.png" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-main-event/"><img src="https://mhdplay.com/wp-content/uploads/2023/09/skyevent.webp" alt="Channel 3"></a>
+  </div>
+  </div>
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sport-uno/"><img src="https://mhdplay.com/wp-content/uploads/2023/12/uno.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-action/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/skyaction.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-arena/"><img src="https://mhdplay.com/wp-content/uploads/2023/10/skyarena.webp" alt="Channel 3"></a>
+  </div>
+  
+</div>
+
+<div class="channel-container">
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-golf/"><img src="https://mhdplay.com/wp-content/uploads/2023/09/skygolf.webp" alt="Channel 1"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-mix/"><img src="https://mhdplay.com/wp-content/uploads/2023/09/skymix.webp" alt="Channel 2"></a>
+  </div>
+  <div class="channel">
+    <span class="hd-icon">FHD</span>
+    <a href="https://mhdplay.com/tv/sky-sports-main-event/"><img src="https://mhdplay.com/wp-content/uploads/2023/09/skyevent.webp" alt="Channel 3"></a>
+  </div>
+  
+</div>
+
+
+<div class="channel-container">
+<div class="channel">
+  <span class="hd-icon">FHD</span>
+  <a href="https://mhdplay.com/tv/super-sport-variety-1/"><img src="https://mhdplay.com/wp-content/uploads/2024/01/ssv1.webp" alt="Channel 1"></a>
+</div>
+<div class="channel">
+  <span class="hd-icon">FHD</span>
+  <a href="https://mhdplay.com/tv/super-sport-variety-2/"><img src="https://mhdplay.com/wp-content/uploads/2024/01/ssv2.webp" alt="Channel 2"></a>
+</div>
+<div class="channel">
+  <span class="hd-icon">FHD</span>
+  <a href="https://mhdplay.com/tv/super-sport-variety-3/"><img src="https://mhdplay.com/wp-content/uploads/2024/01/ssv33.webp" alt="Channel 3"></a>
+</div>
+
+</div> 
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -475,7 +270,87 @@ setInterval(refreshPage, 10000);
 </footer>
 
 <div style="height: 35px;">
- 
+  
+</div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Footer</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #b597fe;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 999;
+  }
+  
+  .footer a {
+    color: black; /* Changed */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold; /* Added */
+  }
+  
+  .footer img {
+    width: 30px; /* Increased */
+    height: 30px; /* Increased */
+    margin-bottom: 5px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .footer {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<footer class="footer">
+  <a href="https://sodkk.github.io/Last/Good.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+    Home
+  </a>
+  <a href="https://iphonechannels123.blogspot.com/">
+    <img src="https://cdn-icons-png.flaticon.com/512/2502/2502208.png" alt="Channel">
+    Channel
+  </a>
+  <a href="whatsapp://send?text=iifurwalalappka &phone=+252613050220">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828959.png" alt="Share App">
+    Share App
+  </a>
+  <a href="whatsapp://send?text=waa application ka ugu fcn oo aad ciyaraha kadawan karto,  wax culees ah malaha waa nadiif 💯, kalasodag linkiga hoose 👇https://soodagapp.blogspot.com/">
+    <img src="https://cdn-icons-png.flaticon.com/512/455/455604.png" alt="Contact">
+    Contact
+  </a>
+</footer>
+
+<div style="height: px;">
+  Scroll down to see the footer even when content hides it.
 </div>
 
 </body>
