@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Redirect</title>
+    <script>
+        // Function to redirect based on user's country
+        function redirectToCountry() {
+            // Make a request to an IP geolocation API to get user's country
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    // Check if country is Somalia
+                    if (data.country == "SO") {
+                        window.location.href = 'https://beinmatch1.com/somali';
+                    } else {
+                        window.location.href = 'https://beinmatch1.com/outside-somali';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Redirect to default link in case of error
+                    window.location.href = 'https://beinmatch1.com/default';
+                });
+        }
+
+        // Call the function when the page loads
+        window.onload = redirectToCountry;
+    </script>
+</head>
+<body>
+    <!-- You can add some content here if needed -->
+    <h1>Redirecting...</h1>
+</body>
+</html>
