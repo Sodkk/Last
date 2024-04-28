@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warning Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .warning-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .warning-text {
-            font-size: 24px;
-            color: #ff0000;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .warning-box {
-                width: 80%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .error-message {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
-    <div class="warning-box">
-        <div class="warning-text">
-            macamiil qaybta iphone ka hagaajin ayaa kusocota , waxaan kadhigayna application
-        </div>
-        <div>
-            delevlopmeny: bari-21:00<br>
-            Channels: All<br>
-            Device: iPhone
-        </div>
-    </div>
+<div id="redirectContainer">
+  <noscript>
+    <p class="error-message">Please enable JavaScript to proceed.</p>
+  </noscript>
+</div>
+
+<script>
+  // Function to detect if the user is using an iPhone
+  function isiPhone() {
+    return /iPhone|iPod/i.test(navigator.userAgent);
+  }
+
+  // Function to redirect users based on device
+  function redirectToLink() {
+    if (isiPhone()) {
+      window.location.href = "https://iphonechannels123.blogspot.com/";
+    } else {
+      document.getElementById("redirectContainer").innerHTML = '<p class="error-message">Sorry, this page is only accessible on iPhone devices.</p>';
+    }
+  }
+
+  // Call the function when the page loads
+  window.onload = redirectToLink;
+</script>
 </body>
 </html>
