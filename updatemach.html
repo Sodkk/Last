@@ -361,35 +361,34 @@ h2 {
   
       const matchCode = `
   <!--match mdw${gamesCount + 1}-->
-  <div class="mnajiri">
-   <a class="fullink" href="${matchLink}"></a>
-       <div class="mnajiriin">
-         <div class="mpart1">
-           <div class="right_match">
-              <span class="right_tech">
-                 <img src="${team1Logo}">
-                  <div class="fname">${team1Name}</div>
-               </span>
-           </div>
-                 <strong class="najiri1">${matchTime}</strong>
-                 <div class="left_match">
-                   <span class="left_tech">
-                     <img src="${team2Logo}">
-                       <div class="fname">${team2Name}</div>
-                   </span>
-                </div>
-            </div>
-               <div class="details_match">
-                  <span class="first_match">
-                     <i aria-hidden="true" class="fa fa-clock-o"></i><b> ${league}</b>
-                   </span>
-                   <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> ${commentator}</b>
-                   </span>
-                   <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b>
-                   </span>
-              </div>
-      </div>
-   </div>
+<div class="mnajiri" data-time="${matchTime}">
+	<a class="fullink" href="${matchLink}"></a>
+	<div class="mnajiriin">
+		<div class="mpart1">
+			<div class="right_match">
+				<span class="right_tech">
+					<img src="${team1Logo}">
+					<div class="fname">${team1Name}</div>
+				</span>
+			</div>
+			<strong class="najiri1">${matchTime}</strong>
+			<div class="left_match">
+				<span class="left_tech">
+					<img src="${team2Logo}">
+					<div class="fname">${team2Name}</div>
+				</span>
+			</div>
+		</div>
+		<div class="details_match">
+			<span class="first_match">
+				<i aria-hidden="true" class="fa fa-clock-o"></i><b> ${league}</b>
+			</span>
+			<span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> ${commentator}</b></span>
+			<span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b></span>
+		</div>
+	</div>
+</div>
+
   `;
   
       generatedCode.value += matchCode.trim();
