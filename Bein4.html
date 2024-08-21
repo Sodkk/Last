@@ -1,13 +1,138 @@
-<iframe allowfullscreen="" class="video-iframe" frameborder="0" height="550px" mozallowfullscreen="" name="search_iframe" scrolling="no" src="https://www.livekoora.info/p/bein4.html?m=1" webkitallowfullscreen="" width="100%"></iframe>
-<center>
-    
-  <h1 class="red-text" style="color: #ffffff;">soodag app</h1>
-    
-</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Cards with Popup Player</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video-js.min.css" rel="stylesheet">
+  <style>
+    .team img {
+      max-width: 100%;
+      height: auto;
+    }
+    .team span {
+      display: block;
+      text-align: center;
+      font-size: 1rem;
+    }
+    @media (max-width: 576px) {
+      .modal-dialog {
+        max-width: 100%;
+        margin: 0;
+      }
+      .modal-content {
+        border-radius: 0;
+      }
+      .team span {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-<style>
+  <div class="match_today container" id="match_today">
+    <!-- Match 1 -->
+    <div class="mnajiri" data-video-id="vid1" data-target="#videoModal" data-toggle="modal">
+      <div class="mnajiriin">
+        <div class="mpart1">
+          <div class="right_match">
+            <span class="right_tech">
+              <img src="https://imgs.ysscores.com/teams/128/5531690711879.png">
+              <div class="fname">Leicester City</div>
+            </span>
+          </div>
+          <strong class="najiri1">22:00</strong>
+          <div class="left_match">
+            <span class="left_tech">
+              <img src="https://cdn.resfu.com/img_data/equipos/2523.png?size=120x&lossy=1&ext=jpeg">
+              <div class="fname">Tottenham</div>
+            </span>
+          </div>
+        </div>
+        <div class="details_match">
+          <span class="first_match">
+            <i aria-hidden="true" class="fa fa-clock-o"></i><b> Premier League</b>
+          </span>
+          <span class="thany"><i aria-hidden="true" class="fa fa-futbol-o"></i><b> Amer Al-Khudhiri</b></span>
+          <span class="liga_mdw"><i aria-hidden="true" class="fa fa-desktop"></i><b>Bein Sport HD1</b></span>
+        </div>
+      </div>
+    </div>
 
-body {  background-color:  #="#53038e"; margin: 0;
+    <!-- Add more matches with unique video IDs (vid2 to vid6) -->
+    <div class="mnajiri" data-video-id="vid2" data-target="#videoModal" data-toggle="modal">
+      <!-- Similar structure for other matches -->
+    </div>
+  </div>
 
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="videoModalLabel">Live Match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <video-js id="vid1" class="video-js vjs-fluid" controls preload="auto">
+            <source src="https://customer-s30muh72ew56qjcs.cloudflarestream.com/e256a2ea50ff85c41aa82370c86e16a8/manifest/video.m3u8" type="application/x-mpegURL">
+          </video-js>
+          <video-js id="vid2" class="video-js vjs-fluid d-none" controls preload="auto">
+            <source src="https://customer-s30muh72ew56qjcs.cloudflarestream.com/e256a2ea50ff85c41aa82370c86e16a8/manifest/video.m3u8" type="application/x-mpegURL">
+          </video-js>
+          <!-- Add more video elements with IDs vid3 to vid6 here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Support Us</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      let currentPlayer = null;
+
+      $('.mnajiri').on('click', function() {
+        const videoId = $(this).data('video-id');
+        
+        // Hide all video players and reset them
+        $('video-js').addClass('d-none').each(function() {
+          const player = videojs(this.id);
+          player.pause();
+          player.currentTime(0);
+        });
+
+        // Show and play the selected video
+        currentPlayer = videojs(videoId);
+        $(`#${videoId}`).removeClass('d-none');
+        currentPlayer.play();
+
+        // Make the video player full-width (horizontally larger)
+        currentPlayer.on('play', function() {
+          $(`#${videoId}`).parent().addClass('w-100');
+        });
+      });
+
+      $('#videoModal').on('hidden.bs.modal', function () {
+        if (currentPlayer) {
+          currentPlayer.pause();
+          currentPlayer.currentTime(0);
+          $(`#${currentPlayer.id()}`).parent().removeClass('w-100'); // Reset to default width
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
